@@ -26,7 +26,7 @@
 
   .rcw-message-text {
     align-self: flex-end;
-    @include message-bubble($turqois-2);
+    @include message-bubble(rgba(22,119,255,0.05));
 
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -44,7 +44,7 @@
   align-items: flex-start;
 
   .rcw-message-text {
-    @include message-bubble($grey-2);
+    @include message-bubble(#F7F8FA);
   }
 }
 
@@ -69,4 +69,11 @@
   &-client {
     margin: 0 0 0 10px;
   }
+}
+.rcw-message-text pre {
+  background: #eee;
+  padding: 5px;
+  border-radius: 5px;
+  overflow-x: scroll;
+  max-width: calc(100vw - 8rem);
 }

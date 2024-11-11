@@ -110,7 +110,7 @@ function Sender({ sendMessage, placeholder, disabledInput, autofocus, onTextInpu
 
   const handlerOnKeyDown= (event) => {
     const el = inputRef.current;
-    
+
     if( event.key === 'Backspace' && el){
       const caretPosition = getCaretIndex(inputRef.current);
       const character = el.innerHTML.charAt(caretPosition - 1);
@@ -143,7 +143,7 @@ function Sender({ sendMessage, placeholder, disabledInput, autofocus, onTextInpu
           spellCheck
           className="rcw-input"
           role="textbox"
-          contentEditable={!disabledInput} 
+          contentEditable={!disabledInput}
           ref={inputRef}
           placeholder={placeholder}
           onInput={handlerOnChange}
@@ -151,13 +151,13 @@ function Sender({ sendMessage, placeholder, disabledInput, autofocus, onTextInpu
           onKeyUp={handlerOnKeyUp}
           onKeyDown={handlerOnKeyDown}
         />
-        
+
       </div>
       <div className="button-group">
-        <button type="submit" className="rcw-reset" onClick={handlerReset}>
+        <button type="submit" className={`rcw-send rcw-reset ${disabledInput && "rcw-disable"}`} onClick={handlerReset}>
           <img src={reset} className="rcw-send-icon" alt={buttonAlt}/>
         </button>
-        <button type="submit" className="rcw-send" onClick={handlerSendMessage}>
+        <button type="submit" className={`rcw-send ${disabledInput && "rcw-disable"}`} onClick={handlerSendMessage}>
           <img src={send} className="rcw-send-icon" alt={buttonAlt}/>
         </button>
       </div>

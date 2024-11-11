@@ -53,11 +53,12 @@ export function createComponentMessage(component: ElementType, props: any, showA
   };
 }
 
-export function createQuickButton(button: { label: string, value: string | number }) {
+export function createQuickButton(button: { label: string, value: string | number, style?: string }) {
   return {
     component: QuickButton,
     label: button.label,
-    value: button.value
+    value: button.value,
+    style: button.style
   };
 }
 
@@ -68,7 +69,7 @@ function sinEaseOut(timestamp: any, begining: any, change: any, duration: any) {
 }
 
 /**
- * 
+ *
  * @param {*} target scroll target
  * @param {*} scrollStart
  * @param {*} scroll scroll distance

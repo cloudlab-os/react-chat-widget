@@ -73,7 +73,7 @@ export interface DeleteMessages {
 
 export interface SetQuickButtons {
   type: typeof SET_QUICK_BUTTONS;
-  buttons: Array<{ label: string, value: string | number }>;
+  buttons: Array<{ label: string, value: string | number, style?: string}>;
 }
 
 export interface SetBadgeCount {

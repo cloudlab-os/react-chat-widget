@@ -18,6 +18,7 @@ export interface MessageTypes extends BaseMessage {
 export type QuickButtonTypes = {
   label: string;
   value: string | number;
+  style: string;
   component: ElementType;
 };
 

@@ -2,7 +2,7 @@
 @import 'common';
 
 .rcw-snippet {
-  @include message-bubble($grey-2);
+  @include message-bubble(#F7F8FA);
 }
 
 .rcw-snippet-title {

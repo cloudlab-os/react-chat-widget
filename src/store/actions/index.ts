@@ -73,7 +73,7 @@ export function hideAvatar(index: number): actionsTypes.HideAvatar {
   };
 }
 
-export function setQuickButtons(buttons: Array<{ label: string, value: string | number }>): actionsTypes.SetQuickButtons {
+export function setQuickButtons(buttons: Array<{ label: string, value: string | number, style?: string }>): actionsTypes.SetQuickButtons {
   return {
     type: actionsTypes.SET_QUICK_BUTTONS,
     buttons

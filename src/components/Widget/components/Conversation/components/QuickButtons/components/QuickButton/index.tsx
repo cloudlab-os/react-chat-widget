@@ -8,7 +8,7 @@ type Props = {
 
 function QuickButton({ button, onQuickButtonClicked }: Props) {
   return (
-    <button className="quick-button" onClick={(event) => onQuickButtonClicked(event, button.value)}>
+    <button className={`quick-button ${button.style || ''}`} onClick={(event) => onQuickButtonClicked(event, button.value)}>
       {button.label}
     </button>
   );

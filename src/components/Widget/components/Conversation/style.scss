@@ -7,8 +7,12 @@
   border-radius: 10px;
   box-shadow: 0px 2px 10px 1px $grey-3;
   min-width: 370px;
-  max-width: 90vw;
+  //max-width: 90vw;
   position: relative;
+  background-image: url("../../../../../assets/bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
   &.active {
     opacity: 1;

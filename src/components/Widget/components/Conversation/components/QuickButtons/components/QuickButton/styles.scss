@@ -1,16 +1,28 @@
 @import 'variables/colors';
 
 .quick-button {
-  background: none;
-  border-radius: 15px;
-  border: 2px solid $turqois-1;
-  font-weight: bold;
-  padding: 5px 10px;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 6px 15px;
   cursor: pointer;
   outline: 0;
+  color: #999;
+  margin-bottom: 30px;
 
   &:active {
     background: $turqois-1;
     color: $white;
+  }
+  &:hover {
+    background: rgba(74,145,245,0.10);
+    color: rgb(74,145,245);
+    border: 1px solid rgb(74,145,245);
+  }
+}
+.red {
+  &:hover {
+    background: rgba(245,34,45,0.10);
+    color: #F5222D;
+    border: 1px solid #F5222D;
   }
 }
