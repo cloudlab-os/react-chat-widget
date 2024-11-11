@@ -1,7 +1,7 @@
 @mixin message-bubble($color) {
   background-color: $color;
   border-radius: 10px;
-  max-width: 215px;
+  max-width: calc(100% - 65px);
   padding: 15px;
   text-align: left;
 }
@@ -19,10 +19,6 @@
   border-radius: 0;
   flex-shrink: 0;
   position: relative;
-}
-
-@mixin title-fs {
-  padding: 0 0 15px 0;
 }
 
 @mixin close-button-fs {

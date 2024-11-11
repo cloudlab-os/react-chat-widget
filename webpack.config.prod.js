@@ -69,7 +69,8 @@ module.exports = {
       {
         test: /\.(jpg|png|gif|svg)$/,
         type: 'asset/inline'
-      }
+      },
+      { test: /\.(ttf|eot|woff|woff2)$/, use: 'url-loader' }
     ]
   },
   plugins: [

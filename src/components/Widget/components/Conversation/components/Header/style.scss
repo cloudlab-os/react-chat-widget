@@ -4,19 +4,21 @@
 .rcw-conversation-container {
 
   .rcw-header {
-    background-color: $turqois-1;
+    background-color: white;
     border-radius: 10px 10px 0 0;
-    color: $white;
+    color: black;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    padding: 15px 0 25px;
+    //text-align: center;
+
+    padding: 26px 10px 0;
   }
 
   .rcw-title {
-    font-size: 24px;
+    font-family: 'AlimamaShuHeiTi-Bold', sans-serif;
+    font-size: 20px;
     margin: 0;
-    padding: 15px 0;
+    padding: 0;
   }
 
   .rcw-close-button {
@@ -38,10 +40,6 @@
     @include header-fs;
   }
 
-  .rcw-title {
-    @include title-fs;
-  }
-
   .rcw-close-button {
     @include close-button-fs;
   }
@@ -57,10 +55,6 @@
 
     .rcw-header {
       @include header-fs;
-    }
-
-    .rcw-title {
-      @include title-fs;
     }
 
     .rcw-close-button {

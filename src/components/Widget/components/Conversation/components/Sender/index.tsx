@@ -6,6 +6,7 @@ import { GlobalState } from 'src/store/types';
 
 import { getCaretIndex, isFirefox, updateCaret, insertNodeAtCaret, getSelection } from '../../../../../../utils/contentEditable'
 const send = require('../../../../../../../assets/send_button.svg') as string;
+const reset = require('../../../../../../../assets/reset_button.svg') as string;
 const emoji = require('../../../../../../../assets/icon-smiley.svg') as string;
 const brRegex = /<br>/g;
 
@@ -49,6 +50,9 @@ function Sender({ sendMessage, placeholder, disabledInput, autofocus, onTextInpu
       sendMessage(el.innerText);
       el.innerHTML = ''
     }
+  }
+  const handlerReset = () => {
+
   }
 
   const handlerOnSelectEmoji = (emoji) => {
@@ -124,11 +128,13 @@ function Sender({ sendMessage, placeholder, disabledInput, autofocus, onTextInpu
     checkSize();
   }
 
+
+
   return (
     <div ref={refContainer} className="rcw-sender">
-      <button className='rcw-picker-btn' type="submit" onClick={handlerPressEmoji}>
-        <img src={emoji} className="rcw-picker-icon" alt="" />
-      </button>
+      {/*<button className='rcw-picker-btn' type="submit" onClick={handlerPressEmoji}>*/}
+      {/*  <img src={emoji} className="rcw-picker-icon" alt="" />*/}
+      {/*</button>*/}
       <div className={cn('rcw-new-message', {
           'rcw-message-disable': disabledInput,
         })
@@ -147,9 +153,14 @@ function Sender({ sendMessage, placeholder, disabledInput, autofocus, onTextInpu
         />
         
       </div>
-      <button type="submit" className="rcw-send" onClick={handlerSendMessage}>
-        <img src={send} className="rcw-send-icon" alt={buttonAlt} />
-      </button>
+      <div className="button-group">
+        <button type="submit" className="rcw-reset" onClick={handlerReset}>
+          <img src={reset} className="rcw-send-icon" alt={buttonAlt}/>
+        </button>
+        <button type="submit" className="rcw-send" onClick={handlerSendMessage}>
+          <img src={send} className="rcw-send-icon" alt={buttonAlt}/>
+        </button>
+      </div>
     </div>
   );
 }

@@ -3,7 +3,9 @@
 [![npm](https://img.shields.io/npm/v/react-chat-widget.svg)](https://www.npmjs.com/package/react-chat-widget)
 
 [![FEArmy](./assets/FEA_open_source_sm.png)](https://github.com/orgs/Wolox/teams/front-end-army/members)
-
+![Sample Image](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA
+AAAACAIAAADlC5WoAAAAHHRFWHRDcmVhdGlvbiBUaW1lADIwMjMtMTAtMTFUMTE6MzE6MjI
+gUE0n0t8bAAAAAElFTkSuQmCC)
 ## Features
 
 - Plain text message UI
