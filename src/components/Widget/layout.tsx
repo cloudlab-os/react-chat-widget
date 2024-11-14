@@ -38,7 +38,8 @@ type Props = {
   zoomStep?: number;
   showBadge?: boolean;
   resizable?: boolean;
-  emojis?: boolean
+  emojis?: boolean;
+  onReset?: () => void;
 }
 
 function WidgetLayout({
@@ -67,7 +68,8 @@ function WidgetLayout({
   zoomStep,
   showBadge,
   resizable,
-  emojis
+  emojis,
+  onReset
 }: Props) {
   const dispatch = useDispatch();
   const { dissableInput, showChat, visible } = useSelector((state: GlobalState) => ({
@@ -86,7 +88,7 @@ function WidgetLayout({
       messageRef.current = null;
     }
   }, [showChat])
-  
+
   const eventHandle = evt => {
     if(evt.target && evt.target.className === 'rcw-message-img') {
       const { src, alt, naturalWidth, naturalHeight } = (evt.target as HTMLImageElement);
@@ -147,6 +149,7 @@ function WidgetLayout({
           showTimeStamp={showTimeStamp}
           resizable={resizable}
           emojis={emojis}
+          onReset={onReset}
         />
       }
       {customLauncher ?

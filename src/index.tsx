@@ -34,6 +34,7 @@ type Props = {
   handleSubmit?: AnyFunction;
   showBadge?: boolean;
   resizable?: boolean;
+  handleReset?: AnyFunction;
 } & typeof defaultProps;
 
 function ConnectedWidget({
@@ -63,7 +64,8 @@ function ConnectedWidget({
   handleSubmit,
   showBadge,
   resizable,
-  emojis
+  emojis,
+  handleReset,
 }: Props) {
   return (
     <Provider store={store}>
@@ -90,11 +92,12 @@ function ConnectedWidget({
         sendButtonAlt={sendButtonAlt}
         showTimeStamp={showTimeStamp}
         imagePreview={imagePreview}
-        zoomStep={zoomStep} 
+        zoomStep={zoomStep}
         handleSubmit={handleSubmit}
         showBadge={showBadge}
         resizable={resizable}
         emojis={emojis}
+        handleReset={handleReset}
       />
     </Provider>
   );

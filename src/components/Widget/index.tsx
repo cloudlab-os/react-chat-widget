@@ -34,6 +34,7 @@ type Props = {
   showBadge?: boolean;
   resizable?: boolean;
   emojis?: boolean;
+  handleReset?: AnyFunction;
 }
 
 function Widget({
@@ -63,7 +64,8 @@ function Widget({
   handleSubmit,
   showBadge,
   resizable,
-  emojis
+  emojis,
+  handleReset
 }: Props) {
   const dispatch = useDispatch();
 
@@ -73,8 +75,8 @@ function Widget({
   }
 
   const handleMessageSubmit = (userInput) => {
-    if (!userInput.trim()) {      
-      return;      
+    if (!userInput.trim()) {
+      return;
     }
 
     handleSubmit?.(userInput);
@@ -115,6 +117,7 @@ function Widget({
       showBadge={showBadge}
       resizable={resizable}
       emojis={emojis}
+      onReset={handleReset}
     />
   );
 }

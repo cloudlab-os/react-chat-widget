@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState, forwardRef, useImperativeHandle } from 'react';
 import { useSelector } from 'react-redux';
+import { deleteMessages } from '../../../../../../store/dispatcher';
 import cn from 'classnames';
 
 import { GlobalState } from 'src/store/types';
@@ -19,11 +20,12 @@ type Props = {
   sendMessage: (event: any) => void;
   buttonAlt: string;
   onPressEmoji: () => void;
+  onReset?: () => void;
   onChangeSize: (event: any) => void;
   onTextInputChange?: (event: any) => void;
 }
 
-function Sender({ sendMessage, placeholder, disabledInput, autofocus, onTextInputChange, buttonAlt, onPressEmoji, onChangeSize }: Props, ref) {
+function Sender({ sendMessage, placeholder, disabledInput, autofocus, onTextInputChange, buttonAlt, onPressEmoji, onChangeSize, onReset }: Props, ref) {
   const showChat = useSelector((state: GlobalState) => state.behavior.showChat);
   const inputRef = useRef<HTMLDivElement>(null!);
   const refContainer = useRef<HTMLDivElement>(null);
@@ -52,7 +54,8 @@ function Sender({ sendMessage, placeholder, disabledInput, autofocus, onTextInpu
     }
   }
   const handlerReset = () => {
-
+    deleteMessages(99999999);
+    onReset && onReset();
   }
 
   const handlerOnSelectEmoji = (emoji) => {
@@ -153,12 +156,12 @@ function Sender({ sendMessage, placeholder, disabledInput, autofocus, onTextInpu
         />
 
       </div>
-      <div className="button-group">
-        <button type="submit" className={`rcw-send rcw-reset ${disabledInput && "rcw-disable"}`} onClick={handlerReset}>
-          <img src={reset} className="rcw-send-icon" alt={buttonAlt}/>
+      <div className={`button-group ${disabledInput && "button-group-disable"}`}>
+        <button type="submit" className={`rcw-reset ${disabledInput && "rcw-disable"}`} onClick={handlerReset}>
+          <img src={reset} alt={buttonAlt}/>
         </button>
         <button type="submit" className={`rcw-send ${disabledInput && "rcw-disable"}`} onClick={handlerSendMessage}>
-          <img src={send} className="rcw-send-icon" alt={buttonAlt}/>
+          <img src={send} alt={buttonAlt}/>
         </button>
       </div>
     </div>

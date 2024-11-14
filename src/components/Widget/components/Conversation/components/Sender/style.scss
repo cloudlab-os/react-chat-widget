@@ -22,7 +22,7 @@
 .rcw-new-message {
   background-color: $white;
   border: 1px solid $grey-4;
-  border-radius: 5px;
+  border-radius: 4px;
   padding: 0 5px;
   resize: none;
   width: calc(100% - 75px);
@@ -38,9 +38,10 @@
 }
 
 .rcw-input {
+  font-size: 14px;
   display: block;
   height: 100%;
-  line-height: 29px;
+  line-height: 30px;
   max-height: 200px;
   overflow-y: auto;
   user-select: text;
@@ -53,7 +54,8 @@
 
   &[placeholder]:empty::before {
     content: attr(placeholder);
-    color: $grey-0;
+    color: #ccc;
+    font-weight: 300;
   }
 }
 
@@ -62,33 +64,43 @@
   flex-direction: row;
   justify-content: space-between;
   border: 1px solid $grey-4;
-  border-radius: 5px;
+  border-radius: 4px;
   background: white;
-  padding: 5px 1px 3px 1px;
-}
 
-.rcw-send, .rcw-picker-btn {
+}
+.button-group-disable {
+  background-color: #f5f5f5;
+}
+//.rcw-picker-btn
+
+.button-group button {
   background-color: transparent;
   border: 0;
   cursor: pointer;
-  border-radius: 5px;
-
-  .rcw-send-icon {
-    height: 16px;
+  padding: 5px;
+  line-height: 0;
+  img {
+    height: 20px;
+  }
+  &:hover {
+    background-color: rgba(22,119,255,0.10);
   }
 }
 .rcw-reset{
 
 }
-.rcw-send:not(:last-child)::after {
-  display: block;
-  content: "";
-  position: relative;
-  right: -21px;
-  top: -17px;
-  width: 1px;
-  background-color: #ccc;
-  height: 70%;
+.button-group button:not(:last-child) {
+  margin-right: 1px;
+  &::after {
+    display: block;
+    content: "";
+    position: relative;
+    right: -25px;
+    top: -18px;
+    width: 1px;
+    background-color: #ccc;
+    height: 80%;
+  }
 }
 
 .rcw-message-disable {
@@ -97,6 +109,10 @@
 }
 .rcw-disable {
   filter: grayscale(100%);
+  opacity: 0.5;
+  &:hover {
+    background: transparent !important;
+  }
 }
 
 @media screen and (max-width: 800px)  {
