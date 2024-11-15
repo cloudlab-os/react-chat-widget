@@ -54,6 +54,9 @@ function Sender({ sendMessage, placeholder, disabledInput, autofocus, onTextInpu
     }
   }
   const handlerReset = () => {
+    if (disabledInput){
+      return;
+    }
     deleteMessages(99999999);
     onReset && onReset();
   }

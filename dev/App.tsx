@@ -7,7 +7,20 @@ export default class App extends Component {
   componentDidMount() {
     addResponseMessage('Welcome to this awesome chat!');
     addLinkSnippet({ link: 'https://google.com', title: 'Google' });
-    addResponseMessage('```javascript\nconsole.log("Hello world!");\n```');
+    addResponseMessage(`
+#### yarn
+\`\`\`
+yarn add react-chat-widget
+\`\`\`
+1. 
+    \`\`\`bash
+    yarn add react-chat-widget
+    \`\`\`
+   2. 22
+       \`\`\`bash
+       yarn add react-chat-widget
+        \`\`\`
+      `);
     // addResponseMessage('![](https://raw.githubusercontent.com/Wolox/press-kit/master/logos/logo_banner.png)');
     // addResponseMessage('![vertical](https://d2sofvawe08yqg.cloudfront.net/reintroducing-react/hero2x?1556470143)');
     setQuickButtons([ { label: '停止回答', value: '停止回答', style: 'red' }, { label: '其他按钮', value: '其他按钮' }]);

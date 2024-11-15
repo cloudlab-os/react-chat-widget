@@ -34,7 +34,7 @@ function Message({ message, showTimeStamp }: Props) {
         // 判断点击位置是否在 "Copy" 按钮区域内
         const top = event.clientY - rect.top
         const right = rect.width - clickX
-        console.log(right, top)
+        // console.log(right, top)
         if (7 < right && right < 29
           && 6 < top && top < 27) {
           const code = element.firstChild.innerText;

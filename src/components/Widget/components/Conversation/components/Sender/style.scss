@@ -70,6 +70,7 @@
 }
 .button-group-disable {
   background-color: #f5f5f5;
+  cursor: not-allowed;
 }
 //.rcw-picker-btn
 
@@ -110,6 +111,7 @@
 .rcw-disable {
   filter: grayscale(100%);
   opacity: 0.5;
+  cursor: not-allowed !important;
   &:hover {
     background: transparent !important;
   }

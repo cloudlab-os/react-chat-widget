@@ -79,6 +79,9 @@
   overflow-x: scroll;
   max-width: calc(100vw - 8rem);
 }
+.rcw-message-text ol pre {
+  max-width: calc(100% - 41px);
+}
 
 .rcw-message-text pre:before {
   border-radius: 5px 5px 0 0;
